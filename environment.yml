@@ -88,6 +88,7 @@ dependencies:
     - simpleitk==2.1.1
     - smmap==5.0.0
     - subprocess32==3.5.4
+    - sklearn==0.0
     - termcolor==1.1.0
     - urllib3==1.26.9
     - wandb==0.12.2
