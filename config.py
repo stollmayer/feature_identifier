@@ -16,12 +16,12 @@ def config():
         "fiducials": "",
         "large_crop_for_small_lesions": False,  # crop radius extended by 2cm for lesions smaller than 40 mm --- set to False
         "root": "./",
-        "annotations": "/mnt/8TB/PHD/RUNNING_PROJECTS/FLL_descriptor_project/Anonym MRI liver lesions_expert.xlsx",
-        "annotations_novice": "/mnt/8TB/PHD/RUNNING_PROJECTS/FLL_descriptor_project/Anonym MRI liver lesions_novice.xlsx",
+        "annotations": "./Anonym MRI liver lesions_expert.xlsx",
+        "annotations_novice": "./Anonym MRI liver lesions_novice.xlsx",
 
         "radius_multiplier": 1.00,
         "crop_padding": 2,
-        "ziehl_folder": "/mnt/8TB/PHD/RUNNING_PROJECTS/FLL_descriptor_project/fll_cropped/",
+        "ziehl_folder": "./fll_cropped/",
         # scan names for calculations and plotting
         "scans": [
             "T2W",
@@ -61,7 +61,7 @@ def config():
         "weight_decay": 0.2,
 
         "val_interval": 20,
-        "model_weights_path": "/mnt/8TB/PHD/RUNNING_PROJECTS/FLL_descriptor_project/results_folder/model_weights",
+        "model_weights_path": "./results_folder/model_weights",
         "model_architecture": [
             "EfficientNetB0",
             "EfficientNetB1",
@@ -85,9 +85,9 @@ def config():
         "model_architecture": "EfficientNetB0",
 
         # Paremeters for test results reproduction:
-        "model_weights": "/mnt/8TB/PHD/RUNNING_PROJECTS/FLL_descriptor_project/results_folder/model_weights/EfficientNetB0_0.0001_32___500_weights.pth",
+        "model_weights": "./results_folder/model_weights/EfficientNetB0_0.0001_32___500_weights.pth",
         
-        "results_folder": "/mnt/8TB/PHD/RUNNING_PROJECTS/FLL_descriptor_project/results_folder/",
+        "results_folder": "./results_folder/",
         "lesion_class": "all",  # FNH, HCC, MET, Other, all
         "create_occlusion_map_plots": False, 
 
