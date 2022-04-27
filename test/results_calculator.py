@@ -8,8 +8,6 @@ import torch
 import metrics.feature_metrics
 import config
 import matplotlib.cm
-from torchsummary import summary
-import math
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 def test_results_calculator(
