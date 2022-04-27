@@ -65,7 +65,6 @@ def dataloader(
                 'Iso- or hyperintensity on venous phase',
                 'Hypoenhancing core', 
                 'Hemorrhage/siderosis',
-                'Diameter'
                 ]]
 
         df_novice=df_novice.dropna()
@@ -81,7 +80,6 @@ def dataloader(
                         'Hypoenhancing core':int,
                         'T2 hyperintensity':int, 
                         'Hemorrhage/siderosis':int,
-                        'Diameter':str,
                         })
 
         for index, row in df_novice.iterrows():   

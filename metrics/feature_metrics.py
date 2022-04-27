@@ -1,8 +1,6 @@
 
-from sklearn.metrics import roc_curve, precision_score, f1_score, recall_score, roc_auc_score, confusion_matrix,cohen_kappa_score
+from sklearn.metrics import roc_curve, roc_auc_score, confusion_matrix,cohen_kappa_score
 import numpy as np
-import torch     
-import ntpath
 import statistics  
 
 def sensivity_specifity_cutoff(y_true, y_score):
