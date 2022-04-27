@@ -93,8 +93,7 @@ def dataloader(
         df_novice.describe()
         pd.set_option('display.max_columns', None)
 
-        if config.config()['lesion_class']!='all':
-            val_dataframe = df[(df['Dataset']==2)]
+        val_dataframe = df[(df['Dataset']==2)]
 
         if config.config()['lesion_class']=='FNH':
             for index, row in df.iterrows():   
@@ -119,8 +118,7 @@ def dataloader(
             % (len(test_dataframe))
         )
 
-        if config.config()['lesion_class']!='all':
-            val_dataframe_novice = df_novice[(df_novice['Dataset']==2)]
+        val_dataframe_novice = df_novice[(df_novice['Dataset']==2)]
 
         if config.config()['lesion_class']=='FNH':
             for index, row in df_novice.iterrows():   
