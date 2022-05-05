@@ -54,6 +54,10 @@ def dataloader(
         pd.set_option('display.max_columns', None)
 
         df_novice = pd.read_excel(annotated_dataset_novice)
+        # Kappa calculation is only usable at the moment if lesion_class is set to "all"!
+        if config.config()['lesion_class']!="all":
+            df_novice = df
+        
         df_novice=df_novice[['#','FNH','HCC','MET','Other','Dataset',
                 'Early enhancement',
                 'Washout', 
@@ -136,10 +140,11 @@ def dataloader(
                     df_novice.drop(index, inplace=True)
 
         test_dataframe_novice = df_novice[(df_novice['Dataset']==2)]
-        print(
-            "Using %d lesions for testing (novice)"
-            % (len(test_dataframe_novice))
-        )
+        if config.config()['lesion_class']=='all':
+            print(
+                "Using %d lesions for testing (novice)"
+                % (len(test_dataframe_novice))
+            )
 
         mypath=dataset_folder
 
