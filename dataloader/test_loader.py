@@ -57,6 +57,7 @@ def dataloader(
         # Kappa calculation is only usable at the moment if lesion_class is set to "all"!
         if config.config()['lesion_class']!="all":
             df_novice = df
+            print("Kappa calculation is only usable at the moment if lesion_class is set to "all"! In all other cases the calculated kappa values will be calculated based on the same annotations.")
         
         df_novice=df_novice[['#','FNH','HCC','MET','Other','Dataset',
                 'Early enhancement',
