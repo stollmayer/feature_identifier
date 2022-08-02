@@ -21,7 +21,7 @@ def config():
 
         "radius_multiplier": 1.00,
         "crop_padding": 2,
-        "ziehl_folder": "./fll_cropped/",
+        "goal_folder": "./fll_cropped/", # folder where the cropped cubic volumes are located (or where they sould be cropped
         # scan names for calculations and plotting
         "scans": [
             "T2W",
