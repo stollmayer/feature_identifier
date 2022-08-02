@@ -42,7 +42,7 @@ for model_architecture in config.config()["model_architecture"]:
                 root=config.config()['root']
                 annotated_dataset=config.config()['annotations']
 
-                dataset_folder=config.config()['ziehl_folder']
+                dataset_folder=config.config()['goal_folder']
                 scans=config.config()["scans"]
 
                 print("The following scans will be used:" + str(scans))
