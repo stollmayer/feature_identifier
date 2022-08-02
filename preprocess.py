@@ -10,7 +10,7 @@ def preprocess_crop():
                 scan_paths=config.config()['scan_paths'],
                 scans_folder=config.config()['scans_folder'],                           
                 fiducials=config.config()['fiducials'],
-                ziehl_folder=config.config()['ziehl_folder'], 
+                goal_folder=config.config()['goal_folder'], 
                 radius_multiplier=config.config()['radius_multiplier'],    
                 )
         elif config.config()['dimensions']=='3d':   
@@ -21,7 +21,7 @@ def preprocess_crop():
                 scan_paths=config.config()['scan_paths'],
                 scans_folder=config.config()['scans_folder'],                           
                 fiducials=config.config()['fiducials'],
-                ziehl_folder=config.config()['ziehl_folder'], 
+                goal_folder=config.config()['goal_folder'], 
                 radius_multiplier=config.config()['radius_multiplier'],    
       
                                     )
@@ -31,4 +31,3 @@ if config.config()['crop']==True:
     preprocess_crop()
 else:
    print( 'Cropping is set to False. Modify config file to enable cropping.' )
-
