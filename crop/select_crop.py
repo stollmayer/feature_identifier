@@ -1,4 +1,3 @@
-
 import os
 import glob
 import pandas as pd
@@ -25,7 +24,7 @@ def crop_3d(
         scan_paths,  
         scans_folder,
         fiducials,
-        ziehl_folder,
+        goal_folder,
         radius_multiplier,
         ):
 
@@ -36,9 +35,9 @@ def crop_3d(
     df_scans = pd.read_excel(scan_paths)
     folder=fiducials
     img_folder=scans_folder
-    ziehl_folder=ziehl_folder
-    if not os.path.exists(ziehl_folder):
-        os.makedirs(ziehl_folder)
+    goal_folder=goal_folder
+    if not os.path.exists(goal_folder):
+        os.makedirs(goal_folder)
     marker=glob.glob(folder+'/*.json')
     coef=radius_multiplier
     for i in df['#'].index:
@@ -98,8 +97,8 @@ def crop_3d(
                                     c_down:c_up,
                                                 ]
 
-                            print( ziehl_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")    
-                            sitk.WriteImage(image_cropped, ziehl_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")
+                            print( goal_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")    
+                            sitk.WriteImage(image_cropped, goal_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")
  
                     else:
                       for u, row in df_scans.iterrows():
@@ -159,8 +158,8 @@ def crop_3d(
                                     b_down:b_up, 
                                     c_down:c_up,]
 
-                            print( ziehl_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")
-                            sitk.WriteImage(image_cropped, ziehl_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")
+                            print( goal_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")
+                            sitk.WriteImage(image_cropped, goal_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")
     return()
 
  
@@ -171,7 +170,7 @@ def crop_2d(
         scan_paths,    
         scans_folder,
         fiducials,
-        ziehl_folder,
+        goal_folder,
         radius_multiplier,
 
         ):
@@ -183,9 +182,9 @@ def crop_2d(
     df_scans = pd.read_excel(scan_paths)
     folder=fiducials
     img_folder=scans_folder
-    ziehl_folder=ziehl_folder
-    if not os.path.exists(ziehl_folder):
-        os.makedirs(ziehl_folder)
+    goal_folder=goal_folder
+    if not os.path.exists(goal_folder):
+        os.makedirs(goal_folder)
     marker=glob.glob(folder+'/*.json')
     coef=radius_multiplier
     for i in df['#'].index:
@@ -259,9 +258,9 @@ def crop_2d(
 
 
                                 
-                            print( ziehl_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")
+                            print( goal_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")
                             
-                            sitk.WriteImage(image_cropped, ziehl_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")
+                            sitk.WriteImage(image_cropped, goal_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")
  
                           else:
                             for u, row in df_scans.iterrows():
@@ -328,7 +327,7 @@ def crop_2d(
                                             middle
                                                         ]
 
-                                    print( ziehl_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")
-                                    sitk.WriteImage(image_cropped, ziehl_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")
+                                    print( goal_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")
+                                    sitk.WriteImage(image_cropped, goal_folder+df['#'][i]+'_'+sequence[0:3]+".nii.gz")
     
     return()
