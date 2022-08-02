@@ -14,7 +14,7 @@ if config.config()['crop']==True:
 annotated_dataset=config.config()['annotations']
 annotated_dataset_novice=config.config()['annotations_novice']
 
-dataset_folder=config.config()['ziehl_folder']
+dataset_folder=config.config()['goal_folder']
 scans=config.config()["scans"]
 
 print("The following scans will be used:" + str(scans))
